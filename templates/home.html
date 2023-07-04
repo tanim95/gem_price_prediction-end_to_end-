@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Diamond Prediction</title>
+    <style>
+      body {
+        background: linear-gradient(to bottom, #000000, #0f5a8c);
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      form {
+        max-width: 400px;
+        max-height: auto;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input[type='text'] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: #ffffff;
+        margin-bottom: 15px;
+      }
+
+      input[type='submit'] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: #0f5a8c;
+        color: #ffffff;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      input[type='submit']:hover {
+        background-color: #063857;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      p {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Diamond Price Prediction</h1>
+    <form method="POST">
+      <label for="cut">Cut:</label>
+      <input type="text" name="cut" id="cut" required /><br /><br />
+
+      <label for="color">Color:</label>
+      <input type="text" name="color" id="color" required /><br /><br />
+
+      <label for="clarity">Clarity:</label>
+      <input type="text" name="clarity" id="clarity" required /><br /><br />
+
+      <label for="carat">Carat:</label>
+      <input type="text" name="carat" id="carat" required /><br /><br />
+
+      <label for="depth">Depth:</label>
+      <input type="text" name="depth" id="depth" required /><br /><br />
+
+      <label for="table">Table:</label>
+      <input type="text" name="table" id="table" required /><br /><br />
+
+      <label for="x">X:</label>
+      <input type="text" name="x" id="x" required /><br /><br />
+
+      <label for="y">Y:</label>
+      <input type="text" name="y" id="y" required /><br /><br />
+
+      <label for="z">Z:</label>
+      <input type="text" name="z" id="z" required /><br /><br />
+
+      <input type="submit" value="Predict" />
+    </form>
+
+    {% if results %}
+    <h2>Prediction Results:</h2>
+    <p>{{ results }} $</p>
+    {% endif %}
+  </body>
+</html>

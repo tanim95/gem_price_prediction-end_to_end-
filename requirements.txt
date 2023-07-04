@@ -10,5 +10,8 @@ flask
 -e .
 
 
+
+# if virtual environment do not run in your windows directly,bypass it by following command
+
 # Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 # venom/Scripts/activate
