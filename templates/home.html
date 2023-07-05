@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Diamond Prediction</title>
+    <title>Gems Price Prediction</title>
     <style>
       body {
         background: linear-gradient(to bottom, #000000, #0f5a8c);
@@ -14,6 +14,8 @@
       }
 
       form {
+        position: relative;
+        left: 10rem;
         max-width: 400px;
         max-height: auto;
         margin: 0 auto;
@@ -24,12 +26,16 @@
 
       label {
         display: block;
+        color: #000000;
         margin-bottom: 10px;
+        font-weight: bold;
       }
 
       input[type='text'] {
         width: 100%;
         padding: 10px;
+        padding-right: 3px;
+        margin-right: 10px;
         border-radius: 5px;
         border: none;
         background-color: #ffffff;
@@ -58,44 +64,89 @@
       p {
         text-align: center;
       }
+
+      .result-container {
+        position: absolute;
+        top: 25rem;
+        left: 5rem;
+        color: #000000;
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        text-align: center;
+        animation: slide-up 0.5s ease-in-out;
+      }
+      .github {
+        position: absolute;
+        left: 2rem;
+        top: 60rem;
+        font-family: 'Courier New', Courier, monospace;
+      }
+      a {
+        color: #337ab7;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+        color: #19cde1;
+      }
+
+      @keyframes slide-up {
+        0% {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
     </style>
   </head>
   <body>
-    <h1>Diamond Price Prediction</h1>
+    <h1>Gems Price Prediction</h1>
     <form method="POST">
-      <label for="cut">Cut:</label>
+      <label for="cut">Cut: [Ideal,Very Good,Premium]</label>
       <input type="text" name="cut" id="cut" required /><br /><br />
 
-      <label for="color">Color:</label>
+      <label for="color">Color: [D,E,F,G,H,I,J etc.]</label>
       <input type="text" name="color" id="color" required /><br /><br />
 
-      <label for="clarity">Clarity:</label>
+      <label for="clarity">Clarity: [VS1,VS2,SI1,SI2,VVS1,VVS2,IF etc]</label>
       <input type="text" name="clarity" id="clarity" required /><br /><br />
 
-      <label for="carat">Carat:</label>
+      <label for="carat">Carat: [Number]</label>
       <input type="text" name="carat" id="carat" required /><br /><br />
 
-      <label for="depth">Depth:</label>
+      <label for="depth">Depth: [Number]</label>
       <input type="text" name="depth" id="depth" required /><br /><br />
 
-      <label for="table">Table:</label>
+      <label for="table">Table: [Number]</label>
       <input type="text" name="table" id="table" required /><br /><br />
 
-      <label for="x">X:</label>
+      <label for="x">X: [Number]</label>
       <input type="text" name="x" id="x" required /><br /><br />
 
-      <label for="y">Y:</label>
+      <label for="y">Y: [Number]</label>
       <input type="text" name="y" id="y" required /><br /><br />
 
-      <label for="z">Z:</label>
+      <label for="z">Z: [Number]</label>
       <input type="text" name="z" id="z" required /><br /><br />
 
       <input type="submit" value="Predict" />
     </form>
 
     {% if results %}
-    <h2>Prediction Results:</h2>
-    <p>{{ results }} $</p>
+    <div class="result-container">
+      <h2>Prediction Price:</h2>
+      <p>{{ results }} $</p>
+    </div>
     {% endif %}
+
+    <h3 class="github">
+      Anisur Rahman <a href="https://github.com/tanim95">GitHub</a>
+    </h3>
   </body>
 </html>
