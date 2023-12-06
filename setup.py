@@ -13,10 +13,6 @@ def get_requirements(file_path):
     return requirements
 
 
-def get_req(file):
-
-
-
 setup(
     name='gem_price_prediction',
     version='1.0.0',
