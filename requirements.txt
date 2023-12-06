@@ -15,3 +15,9 @@ flask
 
 # Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 # venom/Scripts/activate
+
+## FOR DOCKER
+# docker build -t gemprice:1.0 .
+# docker run -p 8000:5000 gemprice
+
+#SERVER RUNNING ON   :  http://127.0.0.1:8000
