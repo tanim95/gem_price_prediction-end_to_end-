@@ -9,6 +9,7 @@ import os
 import sys
 # from src.components.data_transformation import DataTransformation, DataTransformationConfig
 # from src.components.model_trainer import ModelTrainer, ModelTrainerConfig
+# 2 dots refers to the parent directory
 module_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append(module_path)
 

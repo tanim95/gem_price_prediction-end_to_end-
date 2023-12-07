@@ -23,13 +23,14 @@ def load_object(file_path):
             return pickle.load(file)
 
     except Exception as e:
-        raise Custom_exception(e, sys)
+        raise Custom_exception(str(e), sys.exc_info())
 
 
 def evaluate_models(X_train, y_train, X_test, y_test, models, param):
     report = {}
+    n = len(list(models))
 
-    for i in range(len(list(models))):
+    for i in range(n):
         model = list(models.values())[i]
         perameter = param[list(models.keys())[i]]
 
